@@ -13,6 +13,14 @@ document.getElementById("sub-3") .innerHTML = "Understanding the causes can help
 document.getElementById("title-3") .innerHTML = "Why Does Bullying Happen ?";
 document.getElementById("reg-text-2") .innerHTML = "Important to know:";
 document.getElementById("reg-text-3") .innerHTML = "Understanding why bullying happens doesn't excuse the behavior. No matter the reason, bullying is never acceptable, and everyone deserves to be treated with kindness and respect";
+document.getElementById("button-4") .innerHTML = "Serious Concern";
+document.getElementById("title-4") .innerHTML = "Depression: A Common Result";
+document.getElementById("sub-4") .innerHTML = "Ongoing bullying can lead to depression a serious mental health condition that affects how you feel, think and handle daily activities";
+document.getElementById("text-4") .innerHTML = "Symptoms may include:";
+document.getElementById("sub-5") .innerHTML = "Persistent sadness or emptiness";
+document.getElementById("sub-5-2") .innerHTML = "Loss of interest in things you used to enjoy";
+document.getElementById("sub-5-3") .innerHTML = "Changes in sleep or appetite";
+document.getElementById("sub-5-4") .innerHTML = "Feeling hopeless or thinking about self-harm";
 
 const bullyingTypes = [
     {
@@ -64,10 +72,13 @@ const bullyingTypes = [
         </div>
       `;
     });
+    renderCards(bullyingTypes, "bullying-types");
+    renderCards(bullyingCauses, "bullying-causes");
   }
+
+
   
-  renderCards(bullyingTypes, "bullying-types");
-  renderCards(bullyingCauses, "bullying-causes");
+
   
   
   
