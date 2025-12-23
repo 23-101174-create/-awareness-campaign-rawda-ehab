@@ -21,6 +21,17 @@ document.getElementById("sub-5") .innerHTML = "Persistent sadness or emptiness";
 document.getElementById("sub-5-2") .innerHTML = "Loss of interest in things you used to enjoy";
 document.getElementById("sub-5-3") .innerHTML = "Changes in sleep or appetite";
 document.getElementById("sub-5-4") .innerHTML = "Feeling hopeless or thinking about self-harm";
+document.getElementById("title-icon") .innerHTML = "Safety";
+document.getElementById("sub-icon") .innerHTML = "Every young person deserves to feel safe";
+document.getElementById("title-icon-2") .innerHTML = "Wellbeing";
+document.getElementById("sub-icon-2") .innerHTML = "Mental and emotional health matters";
+document.getElementById("title-icon-3") .innerHTML = "Awareness";
+document.getElementById("sub-icon-3") .innerHTML = "Understanding and prevention";
+document.getElementById("title-icon-4") .innerHTML = "Community";
+document.getElementById("sub-icon-4") .innerHTML = "Creating supportive environments";
+document.getElementById("re") .innerHTML = "Related Concerns";
+document.getElementById("sub-6") .innerHTML = "Bullying is part of a larger conversation about protecting young people and their wellbeing";
+document.getElementById("fe") .innerHTML = "Feelings We Don’t Say";
 
 const bullyingTypes = [
     {

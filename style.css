@@ -505,3 +505,132 @@ body{
     width: 380px;
     height: 440px;
 }
+.related-section{
+    width: 100%;
+    height:637px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 60px;
+}
+.icon-box{
+    display: flex;
+    width: 233px;
+    height: 467px;
+    flex-direction: column;
+    align-items: center;
+    gap: 26px;
+}
+.image-section{
+    display: flex;
+    width: 471px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 50px;
+}
+.circle-icon-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 9px;
+    align-self: stretch;
+}
+.circle-icon{
+    width: 128px;
+    height: 132px;
+}
+.title-icon{
+    color: #101828;
+    text-align: center;
+    font-family: "Inter";
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 28px;
+}
+.sub-icon{
+    color: #4A5565;
+    text-align: center;
+    font-family: "Inter";
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+}
+.title-sec-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    align-self: stretch;
+}
+.title-sec{
+    color: #532859;
+    text-align: center;
+    font-family: "ADLaM Display";
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 39.2px;
+    letter-spacing: 0.383px;
+}
+.sub-sec{
+    color: #4A5565;
+    text-align: center;
+    font-family: "Inter";
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+}
+.img-box{
+    display: flex;
+    width: 471px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 50px;
+}
+.img{
+    width: 471px;
+    height: 278px;
+}
+.gallery-sec{
+    width: 1120px;
+    height: 437px;
+    border-radius: 30px;
+    background: #FDE4E5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box-all-gallery{
+    width: 100%;
+    height: 563px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.title-gallery-box{
+    display: flex;
+    width: 970px;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+}
+.title-gallery{
+    color: #101828;
+    text-align: center;
+    font-family: "ADLaM Display";
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 33.6px;
+    letter-spacing: -0.312px;
+}
+.gallery-img{
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    align-self: stretch;
+    flex-direction: row;
+}
+.img-gallery{
+    width: 311.593px;
+    height: 217px;
+}
