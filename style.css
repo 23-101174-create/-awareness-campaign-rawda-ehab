@@ -1,3 +1,56 @@
+:root {
+    /* Light Mode Colors */
+    --color-primary: #824D69;
+    --color-primary-dark: #61334b;
+    --color-primary-light: #998199;
+    --color-purple: #532859;
+    --color-purple-dark: #2E1154;
+    --color-bg-white: #FFF;
+    --color-bg-pink: #DFB6B2;
+    --color-bg-pink-light: #FDE4E5;
+    --color-bg-gradient-start: #FAF5FF;
+    --color-bg-gradient-end: #EFF6FF;
+    --color-bg-footer-start: #DCA9A4;
+    --color-bg-footer-end: #FDD2CE;
+    --color-text-dark: #180018;
+    --color-text-gray: #101828;
+    --color-text-gray-light: #4A5565;
+    --color-text-gray-medium: #364153;
+    --color-text-gray-darker: #1F2937;
+    --color-text-white: #FFF;
+    --color-text-off-white: #e9e9e9;
+    --color-border-light: #F3E8FF;
+    --color-nav-bg: rgba(223, 182, 178, 0.40);
+    --color-button-transparent: rgba(130, 77, 105, 0.78);
+    --transition-speed: 0.3s;
+}
+
+[data-theme="dark"] {
+    /* Dark Mode Colors */
+    --color-primary: #824D69;
+    --color-primary-dark: #DFB6B2;
+    --color-primary-light: #FAE5D8;
+    --color-purple: #824D69;
+    --color-purple-dark: #522959;
+    --color-bg-white: #180018;
+    --color-bg-pink: #2A1148;
+    --color-bg-pink-light: rgba(117, 103, 134, 0.977);
+    --color-bg-gradient-start: rgba(117, 103, 134, 0.974);
+    --color-bg-gradient-end: #2E1154;
+    --color-bg-footer-start:rgba(117, 103, 134, 0.963);
+    --color-bg-footer-end: #2E1154;
+    --color-text-dark: #FAE5D8;
+    --color-text-gray: #FAE5D8;
+    --color-text-gray-light: #DFB6B2;
+    --color-text-gray-medium: #DFB6B2;
+    --color-text-gray-darker: #FAE5D8;
+    --color-text-white: #FAE5D8;
+    --color-text-off-white: #DFB6B2;
+    --color-border-light: #522959;
+    --color-nav-bg: rgba(117, 103, 134, 0.9);
+    --color-button-transparent: rgba(130, 77, 105, 0.90);
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -10,7 +63,8 @@ body{
     padding: 0;
     overflow-x: hidden;
     position: relative;
-    background:#FFF;
+    background: var(--color-bg-white);
+    transition: background var(--transition-speed) ease;
 }
 .background-img{
     background-image: url(imgs/background.png);
@@ -25,7 +79,7 @@ body{
     justify-content: center;
 }
 .nav-bar{
-    background: rgba(223, 182, 178, 0.40);
+    background: var(--color-nav-bg);
     display: flex;
     width: 100%;
     align-items: center;
@@ -36,6 +90,7 @@ body{
     left: 0;
     z-index: 1000;
     justify-content: center;
+    transition: background var(--transition-speed) ease;
 }
 .logo{
     width: 115px;
@@ -47,16 +102,17 @@ body{
     gap: 40px;
 }
 .text-1{
-    color: #998199;
+    color: var(--color-primary-light);
     font-family: "Inter";
     font-size: 22px;
     font-weight: 500;
     line-height: 48px;
     letter-spacing: 0.371px;
     text-decoration: none;
+    transition: color var(--transition-speed) ease;
 }
 .text-2{
-    color: #180018;
+    color: var(--color-text-dark);
     font-family: "Inter";
     font-size: 22px;
     font-weight: 500;
@@ -66,7 +122,7 @@ body{
     transition: all 200ms ease-in-out;
 }
 .text-2:hover{
-    color: #998199;
+    color: var(--color-primary-light);
 }
 .button-box{
     display: flex;
@@ -82,8 +138,8 @@ body{
     align-items: center;
     gap: 10px;
     border-radius: 10px;
-    background: #824D69;
-    color: #FFF;
+    background: var(--color-primary);
+    color: var(--color-text-white);
     font-family: "Inter";
     font-size: 20px;
     font-style: normal;
@@ -94,7 +150,7 @@ body{
     transition: transform 0.3s;
 }
 .button:hover{
-    background: #61334b;
+    background: var(--color-primary-dark);
     transform: scale(1.1);
 }
 .button-2{
@@ -106,8 +162,8 @@ body{
     align-items: center;
     gap: 10px;
     border-radius: 10px;
-    background: #824D69;
-    color: #FFF;
+    background: var(--color-primary);
+    color: var(--color-text-white);
     font-family: "Inter";
     font-size: 20px;
     font-style: normal;
@@ -116,9 +172,10 @@ body{
     letter-spacing: 0.371px;
     transition: all 200ms ease-in-out;
     transition: transform 0.3s;
+    cursor: pointer;
 }
 .button-2:hover{
-    background: #61334b;
+    background: var(--color-primary-dark);
     transform: scale(1.1);
 }
 .box-title{
@@ -130,21 +187,23 @@ body{
     margin-bottom: 212px;
 }
 .title{
-    color: #532859;
+    color: var(--color-purple);
     text-align: center;
     font-family: "Agbalumo";
     font-size: 50px;
     font-weight: 400;
     line-height: 50px;
     letter-spacing: 0.371px;
+    transition: color var(--transition-speed) ease;
 }
 .sub-title{
-    color: #180018;
+    color: var(--color-text-dark);
     text-align: center;
     font-family: "Inter";
     font-size: 14px;
     font-weight: 500;
     line-height: 22px;
+    transition: color var(--transition-speed) ease;
 }
 .button-3{
     display: flex;
@@ -155,8 +214,8 @@ body{
     align-items: center;
     gap: 10px;
     border-radius: 10px;
-    background: #824D69;
-    color: #FFF;
+    background: var(--color-primary);
+    color: var(--color-text-white);
     font-family: Inter;
     font-size: 18px;
     font-style: normal;
@@ -167,7 +226,7 @@ body{
     transition: transform 0.3s;
 }
 .button-3:hover{
-    background: #61334b;
+    background: var(--color-primary-dark);
     transform: scale(1.1);
 }
 .section-2{
@@ -183,11 +242,12 @@ body{
     width: 1120px;
     height: 514px;
     border-radius: 20px;
-    border: 4px solid #824D69;
-    background: #FFF;
+    border: 4px solid var(--color-primary);
+    background: var(--color-bg-white);
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: all var(--transition-speed) ease;
 }
 .inner-box{
     display: flex;
@@ -206,21 +266,23 @@ body{
     gap: 24px;
 }
 .title-2{
-    color: #532859;
+    color: var(--color-purple);
     text-align: center;
     font-family: "ADLaM Display";
     font-size: 37px;
     font-weight: 400;
     line-height: 41.6px;
+    transition: color var(--transition-speed) ease;
 }
 .sub-2{
-    color: #180018;
+    color: var(--color-text-dark);
     text-align: center;
     font-family: "Inter";
     font-size: 16px;
     font-weight: 500;
     line-height: 27.2px;
     letter-spacing: -0.312px;
+    transition: color var(--transition-speed) ease;
 }
 .cards-container {
     display: flex;
@@ -233,10 +295,11 @@ body{
     width: 305px;
     height: 175px;
     border-radius: 10px;
-    background: #824D69;
+    background: var(--color-primary);
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: background var(--transition-speed) ease;
 }
 .inner-card{
     display: flex;
@@ -247,37 +310,41 @@ body{
 }
   
 .bullying-card h3 {
-    color: #FFF;
+    color: var(--color-text-white);
     font-family: "Inter";
     font-size: 20px;
     font-weight: 600;
     line-height: 28px;
+    transition: color var(--transition-speed) ease;
 }
   
 .bullying-card p {
-    color: #e9e9e9;
+    color: var(--color-text-off-white);
     font-family: "Inter";
     font-size: 14px;
     font-weight: 400;
     line-height: 20px;
+    transition: color var(--transition-speed) ease;
 }
 .reg{
     width: 100%;
     height: 95px;
-    border: 1px solid #F3E8FF;
-    background: linear-gradient(90deg, #FAF5FF 0%, #EFF6FF 100%);
+    border: 1px solid var(--color-border-light);
+    background: linear-gradient(90deg, var(--color-bg-gradient-start) 0%, var(--color-bg-gradient-end) 100%);
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: all var(--transition-speed) ease;
 }
 .reg-text{
-    color: #180018;
+    color: var(--color-text-dark);
     text-align: center;
     font-family: "Inter";
     font-size: 18px;
     font-weight: 600;
     line-height: 27.2px;
     letter-spacing: -0.312px;
+    transition: color var(--transition-speed) ease;
 }
 .section-3{
     width: 100%;
@@ -292,11 +359,12 @@ body{
     width: 1120px;
     height: 514px;
     border-radius: 20px;
-    border: 4px solid #2E1154;
-    background: #FFF;
+    border: 4px solid var(--color-purple-dark);
+    background: var(--color-bg-white);
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: all var(--transition-speed) ease;
 }
 .inner-box-2{
     display: flex;
@@ -315,21 +383,23 @@ body{
     gap: 24px;
 }
 .title-3{
-    color: #532859;
+    color: var(--color-purple);
     text-align: center;
     font-family: "ADLaM Display";
     font-size: 37px;
     font-weight: 400;
     line-height: 41.6px;
+    transition: color var(--transition-speed) ease;
 }
 .sub-3{
-    color: #180018;
+    color: var(--color-text-dark);
     text-align: center;
     font-family: "Inter";
     font-size: 16px;
     font-weight: 500;
     line-height: 27.2px;
     letter-spacing: -0.312px;
+    transition: color var(--transition-speed) ease;
 }
 .cards-container-2{
     display: flex;
@@ -341,10 +411,11 @@ body{
     width: 305px;
     height: 175px;
     border-radius: 10px;
-    background: #2E1154;
+    background: var(--color-purple-dark);
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: background var(--transition-speed) ease;
 }
 .inner-card-2{
     display: flex;
@@ -355,19 +426,21 @@ body{
 }
   
 .bullying-card-2 h4 {
-    color: #FFF;
+    color: var(--color-text-white);
     font-family: "Inter";
     font-size: 20px;
     font-weight: 600;
     line-height: 28px;
+    transition: color var(--transition-speed) ease;
 }
   
 .bullying-card-2 p {
-    color: #e9e9e9;
+    color: var(--color-text-off-white);
     font-family: "Inter";
     font-size: 14px;
     font-weight: 400;
     line-height: 20px;
+    transition: color var(--transition-speed) ease;
 }
 .reg-2{
     display: flex;
@@ -377,25 +450,28 @@ body{
     justify-content: center;
     align-items: flex-start;
     border-radius: 19.857px;
-    border-left: 4.964px solid #824D69;
-    background: #FFF;
+    border-left: 4.964px solid var(--color-primary);
+    background: var(--color-bg-white);
     box-shadow: 3px 4px 8.1px -1.241px rgba(0, 0, 0, 0.30);
+    transition: all var(--transition-speed) ease;
 }
 .reg-text-2{
-    color: #101828;
+    color: var(--color-text-gray);
     font-family: "Inter";
     font-size: 19px;
     font-weight: 600;
     line-height: 33.757px;
     letter-spacing: -0.388px;
+    transition: color var(--transition-speed) ease;
 }
 .reg-text-3{
-    color: #101828;
+    color: var(--color-text-gray);
     font-family: "Inter";
     font-size: 19px;
     font-weight: 400;
     line-height: 33.757px;
     letter-spacing: -0.388px;
+    transition: color var(--transition-speed) ease;
 }
 .sec-4{
     background-image: url(imgs/back-2.png);
@@ -451,27 +527,30 @@ body{
     align-items: center;
     gap: 10px;
     border-radius: 25px;
-    background: rgba(130, 77, 105, 0.78);
-    color: #FFF;
+    background: var(--color-button-transparent);
+    color: var(--color-text-white);
     font-family: "Inter";
     font-size: 16px;
     font-weight: 500;
     line-height: 25.6px;
+    transition: all var(--transition-speed) ease;
 }
 .title-4{
-    color: #101828;
+    color: var(--color-text-gray);
     font-family: "ADLaM Display";
     font-size: 26px;
     font-weight: 400;
     line-height: 33.6px;
     letter-spacing: 0.07px;
+    transition: color var(--transition-speed) ease;
 }
 .sub-4{
-    color: #364153;
+    color: var(--color-text-gray-medium);
     font-family: "Inter";
     font-size: 16px;
     font-weight: 500;
     line-height: 27.2px;
+    transition: color var(--transition-speed) ease;
 }
 .text-sec{
     display: flex;
@@ -479,27 +558,30 @@ body{
     gap: 8px;
 }
 .text-4{
-    color: #364153;
+    color: var(--color-text-gray-medium);
     font-family: "Inter";
     font-size: 18px;
     font-weight: 700;
     line-height: 27.2px;
+    transition: color var(--transition-speed) ease;
 }
 .dot{
-    color: #532959;
+    color: var(--color-purple);
     font-family: "Inter";
     font-size: 16px;
     font-weight: 400;
     line-height: 25.6px;
     letter-spacing: -0.312px;
+    transition: color var(--transition-speed) ease;
 }
 .sub-5{
-    color: #364153;
+    color: var(--color-text-gray-medium);
     font-family: "Inter";
     font-size: 16px;
     font-weight: 400;
     line-height: 25.6px;
     letter-spacing: -0.312px;
+    transition: color var(--transition-speed) ease;
 }
 .stop-img{
     width: 380px;
@@ -541,20 +623,22 @@ body{
     height: 132px;
 }
 .title-icon{
-    color: #101828;
+    color: var(--color-text-gray);
     text-align: center;
     font-family: "Inter";
     font-size: 20px;
     font-weight: 700;
     line-height: 28px;
+    transition: color var(--transition-speed) ease;
 }
 .sub-icon{
-    color: #4A5565;
+    color: var(--color-text-gray-light);
     text-align: center;
     font-family: "Inter";
     font-size: 16px;
     font-weight: 500;
     line-height: 24px;
+    transition: color var(--transition-speed) ease;
 }
 .title-sec-box{
     display: flex;
@@ -564,21 +648,23 @@ body{
     align-self: stretch;
 }
 .title-sec{
-    color: #532859;
+    color: var(--color-purple);
     text-align: center;
     font-family: "ADLaM Display";
     font-size: 32px;
     font-weight: 400;
     line-height: 39.2px;
     letter-spacing: 0.383px;
+    transition: color var(--transition-speed) ease;
 }
 .sub-sec{
-    color: #4A5565;
+    color: var(--color-text-gray-light);
     text-align: center;
     font-family: "Inter";
     font-size: 14px;
     font-weight: 500;
     line-height: 20px;
+    transition: color var(--transition-speed) ease;
 }
 .img-box{
     display: flex;
@@ -595,10 +681,11 @@ body{
     width: 1120px;
     height: 437px;
     border-radius: 30px;
-    background: #FDE4E5;
+    background: var(--color-bg-pink-light);
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: background var(--transition-speed) ease;
 }
 .box-all-gallery{
     width: 100%;
@@ -615,13 +702,14 @@ body{
     gap: 50px;
 }
 .title-gallery{
-    color: #101828;
+    color: var(--color-text-gray);
     text-align: center;
     font-family: "ADLaM Display";
     font-size: 28px;
     font-weight: 400;
     line-height: 33.6px;
     letter-spacing: -0.312px;
+    transition: color var(--transition-speed) ease;
 }
 .gallery-img{
     display: flex;
@@ -637,10 +725,11 @@ body{
 .footer-sec{
     width: 100%;
     height: 320px;
-    background: linear-gradient(90deg, #DCA9A4 0%, #FDD2CE 100%);
+    background: linear-gradient(90deg, var(--color-bg-footer-start) 0%, var(--color-bg-footer-end) 100%);
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: background var(--transition-speed) ease;
 }
 .footer-container{
     width: 1120px;
@@ -658,10 +747,11 @@ body{
     height: 160px;
 }
 .footer-brand{
-    color: #101828;
+    color: var(--color-text-gray);
     font-family: "Inter";
     font-size: 24px;
     font-weight: 800;
+    transition: color var(--transition-speed) ease;
 }
 .footer-links-box{
     display: flex;
@@ -669,10 +759,11 @@ body{
     gap: 16px;
 }
 .footer-title{
-    color: #101828;
+    color: var(--color-text-gray);
     font-family: "Inter";
     font-size: 18px;
     font-weight: 700;
+    transition: color var(--transition-speed) ease;
 }
 .footer-links{
     list-style: none;
@@ -683,11 +774,12 @@ body{
     gap: 10px;
 }
 .footer-links li{
-    color: #1F2937;
+    color: var(--color-text-gray-darker);
     font-family: "Inter";
     font-size: 16px;
     font-weight: 500;
     cursor: pointer;
+    transition: color var(--transition-speed) ease;
 }
 .footer-social-box{
     display: flex;
@@ -702,4 +794,3 @@ body{
     width: 48.21px;
     height: 48.21px;
 }
-

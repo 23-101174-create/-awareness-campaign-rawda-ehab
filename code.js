@@ -83,9 +83,31 @@ const bullyingTypes = [
         </div>
       `;
     });
-    renderCards(bullyingTypes, "bullying-types");
-    renderCards(bullyingCauses, "bullying-causes");
   }
+  renderCards(bullyingTypes, "bullying-types");
+  renderCards(bullyingCauses, "bullying-causes");
+
+// Dark Mode Toggle
+const darkModeBtn = document.querySelector('.button-2');
+const htmlElement = document.documentElement;
+
+const currentTheme = localStorage.getItem('theme') || 'light';
+htmlElement.setAttribute('data-theme', currentTheme);
+if (currentTheme === 'dark') {
+    darkModeBtn.textContent = 'Light Mode';
+} else {
+    darkModeBtn.textContent = 'Dark Mode';
+}
+
+darkModeBtn.addEventListener('click', () => {
+    const theme = htmlElement.getAttribute('data-theme');
+    const newTheme = theme === 'light' ? 'dark' : 'light';
+    
+    htmlElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+    darkModeBtn.textContent = newTheme === 'dark' ? 'Light Mode' : 'Dark Mode';
+});
+
 
 
   
