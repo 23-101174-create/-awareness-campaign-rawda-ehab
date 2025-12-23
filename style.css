@@ -27,19 +27,18 @@
 
 [data-theme="dark"] {
     /* Dark Mode Colors */
-    --color-primary: #824D69;
+    --color-primary: #81546c;
     --color-primary-dark: #DFB6B2;
     --color-primary-light: #FAE5D8;
-    --color-purple: #824D69;
+    --color-purple: #c8a2b6;
     --color-purple-dark: #522959;
     --color-bg-white: #180018;
     --color-bg-pink: #2A1148;
-    --color-bg-pink-light: rgba(117, 103, 134, 0.977);
+    --color-bg-pink-light: rgba(68, 29, 47, 0.977);
     --color-bg-gradient-start: rgba(117, 103, 134, 0.974);
-    --color-bg-gradient-end: #2E1154;
-    --color-bg-footer-start:rgba(117, 103, 134, 0.963);
-    --color-bg-footer-end: #2E1154;
-    --color-text-dark: #FAE5D8;
+    --color-bg-gradient-end: #913c4fea;
+    --color-bg-footer-start:rgba(126, 109, 109, 0.963);
+    --color-text-dark: #ffffff;
     --color-text-gray: #FAE5D8;
     --color-text-gray-light: #DFB6B2;
     --color-text-gray-medium: #DFB6B2;

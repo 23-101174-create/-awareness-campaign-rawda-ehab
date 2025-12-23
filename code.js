@@ -109,46 +109,7 @@ darkModeBtn.addEventListener('click', () => {
     darkModeBtn.textContent = newTheme === 'dark' ? 'Light Mode' : 'Dark Mode';
 });
 
-// Read More / Read Less functionality
-function addReadMoreFunctionality() {
-    const paragraphs = document.querySelectorAll('.reg-text-3');
-    
-    paragraphs.forEach(para => {
-        const fullText = para.textContent;
-        const words = fullText.split(' ');
-        
-        if (words.length > 20) {
-            const shortText = words.slice(0, 20).join(' ') + '...';
-            para.textContent = shortText;
-            para.dataset.fullText = fullText;
-            para.dataset.shortText = shortText;
-            para.dataset.expanded = 'false';
-            
-            const btn = document.createElement('span');
-            btn.textContent = ' Read More';
-            btn.style.color = 'var(--color-primary)';
-            btn.style.cursor = 'pointer';
-            btn.style.fontWeight = '600';
-            btn.classList.add('read-more-btn');
-            
-            btn.addEventListener('click', function() {
-                if (para.dataset.expanded === 'false') {
-                    para.childNodes[0].textContent = para.dataset.fullText + ' ';
-                    btn.textContent = 'Read Less';
-                    para.dataset.expanded = 'true';
-                } else {
-                    para.childNodes[0].textContent = para.dataset.shortText + ' ';
-                    btn.textContent = 'Read More';
-                    para.dataset.expanded = 'false';
-                }
-            });
-            
-            para.appendChild(btn);
-        }
-    });
-}
 
-window.addEventListener('load', addReadMoreFunctionality);
 
 const scrollBtn = document.createElement('div');
 scrollBtn.innerHTML = '↑';
