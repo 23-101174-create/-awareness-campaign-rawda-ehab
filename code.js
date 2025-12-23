@@ -1,37 +1,38 @@
+
 document.getElementById("Home").innerHTML = "Home";
-document.getElementById("Gallery") .innerHTML = "Gallery";
-document.getElementById("Contact-us") .innerHTML = "Contact us";
-document.getElementById("login") .innerHTML = "Login";
-document.getElementById("dark") .innerHTML = "Dark Mode";
-document.getElementById("title") .innerHTML = "Your Voice Matters Your Story Counts";
-document.getElementById("sub-1") .innerHTML = "Bullying can hurt, but speaking up can heal We're here to support you through your journey to mental wellness";
-document.getElementById("button-3") .innerHTML = "Learn More";
-document.getElementById("title-2") .innerHTML = "What is Bullying?";
-document.getElementById("sub-2") .innerHTML = "Bullying is when someone repeatedly hurts, threatens, or excludes you on purpose. It's not your fault and you deserve to feel safe and respected";
-document.getElementById("reg-text") .innerHTML = "Remember: If someone's behavior makes you feel scared, sad or unsafe it's not okay and it's not something you should deal with alone";
-document.getElementById("sub-3") .innerHTML = "Understanding the causes can help us prevent bullying and create a kinder community";
-document.getElementById("title-3") .innerHTML = "Why Does Bullying Happen ?";
-document.getElementById("reg-text-2") .innerHTML = "Important to know:";
-document.getElementById("reg-text-3") .innerHTML = "Understanding why bullying happens doesn't excuse the behavior. No matter the reason, bullying is never acceptable, and everyone deserves to be treated with kindness and respect";
-document.getElementById("button-4") .innerHTML = "Serious Concern";
-document.getElementById("title-4") .innerHTML = "Depression: A Common Result";
-document.getElementById("sub-4") .innerHTML = "Ongoing bullying can lead to depression a serious mental health condition that affects how you feel, think and handle daily activities";
-document.getElementById("text-4") .innerHTML = "Symptoms may include:";
-document.getElementById("sub-5") .innerHTML = "Persistent sadness or emptiness";
-document.getElementById("sub-5-2") .innerHTML = "Loss of interest in things you used to enjoy";
-document.getElementById("sub-5-3") .innerHTML = "Changes in sleep or appetite";
-document.getElementById("sub-5-4") .innerHTML = "Feeling hopeless or thinking about self-harm";
-document.getElementById("title-icon") .innerHTML = "Safety";
-document.getElementById("sub-icon") .innerHTML = "Every young person deserves to feel safe";
-document.getElementById("title-icon-2") .innerHTML = "Wellbeing";
-document.getElementById("sub-icon-2") .innerHTML = "Mental and emotional health matters";
-document.getElementById("title-icon-3") .innerHTML = "Awareness";
-document.getElementById("sub-icon-3") .innerHTML = "Understanding and prevention";
-document.getElementById("title-icon-4") .innerHTML = "Community";
-document.getElementById("sub-icon-4") .innerHTML = "Creating supportive environments";
-document.getElementById("re") .innerHTML = "Related Concerns";
-document.getElementById("sub-6") .innerHTML = "Bullying is part of a larger conversation about protecting young people and their wellbeing";
-document.getElementById("fe") .innerHTML = "Feelings We Don’t Say";
+document.getElementById("Gallery").innerHTML = "Gallery";
+document.getElementById("Contact-us").innerHTML = "Contact us";
+document.getElementById("login").innerHTML = "Login";
+document.getElementById("dark").innerHTML = "Dark Mode";
+document.getElementById("title").innerHTML = "Your Voice Matters Your Story Counts";
+document.getElementById("sub-1").innerHTML = "Bullying can hurt, but speaking up can heal We're here to support you through your journey to mental wellness";
+document.getElementById("button-3").innerHTML = "Learn More";
+document.getElementById("title-2").innerHTML = "What is Bullying?";
+document.getElementById("sub-2").innerHTML = "Bullying is when someone repeatedly hurts, threatens, or excludes you on purpose. It's not your fault and you deserve to feel safe and respected";
+document.getElementById("reg-text").innerHTML = "Remember: If someone's behavior makes you feel scared, sad or unsafe it's not okay and it's not something you should deal with alone";
+document.getElementById("sub-3").innerHTML = "Understanding the causes can help us prevent bullying and create a kinder community";
+document.getElementById("title-3").innerHTML = "Why Does Bullying Happen ?";
+document.getElementById("reg-text-2").innerHTML = "Important to know:";
+document.getElementById("reg-text-3").innerHTML = "Understanding why bullying happens doesn't excuse the behavior. No matter the reason, bullying is never acceptable, and everyone deserves to be treated with kindness and respect";
+document.getElementById("button-4").innerHTML = "Serious Concern";
+document.getElementById("title-4").innerHTML = "Depression: A Common Result";
+document.getElementById("sub-4").innerHTML = "Ongoing bullying can lead to depression a serious mental health condition that affects how you feel, think and handle daily activities";
+document.getElementById("text-4").innerHTML = "Symptoms may include:";
+document.getElementById("sub-5").innerHTML = "Persistent sadness or emptiness";
+document.getElementById("sub-5-2").innerHTML = "Loss of interest in things you used to enjoy";
+document.getElementById("sub-5-3").innerHTML = "Changes in sleep or appetite";
+document.getElementById("sub-5-4").innerHTML = "Feeling hopeless or thinking about self-harm";
+document.getElementById("title-icon").innerHTML = "Safety";
+document.getElementById("sub-icon").innerHTML = "Every young person deserves to feel safe";
+document.getElementById("title-icon-2").innerHTML = "Wellbeing";
+document.getElementById("sub-icon-2").innerHTML = "Mental and emotional health matters";
+document.getElementById("title-icon-3").innerHTML = "Awareness";
+document.getElementById("sub-icon-3").innerHTML = "Understanding and prevention";
+document.getElementById("title-icon-4").innerHTML = "Community";
+document.getElementById("sub-icon-4").innerHTML = "Creating supportive environments";
+document.getElementById("re").innerHTML = "Related Concerns";
+document.getElementById("sub-6").innerHTML = "Bullying is part of a larger conversation about protecting young people and their wellbeing";
+document.getElementById("fe").innerHTML = "Feelings We Don't Say";
 
 const bullyingTypes = [
     {
@@ -108,10 +109,104 @@ darkModeBtn.addEventListener('click', () => {
     darkModeBtn.textContent = newTheme === 'dark' ? 'Light Mode' : 'Dark Mode';
 });
 
+// Read More / Read Less functionality
+function addReadMoreFunctionality() {
+    const paragraphs = document.querySelectorAll('.reg-text-3');
+    
+    paragraphs.forEach(para => {
+        const fullText = para.textContent;
+        const words = fullText.split(' ');
+        
+        if (words.length > 20) {
+            const shortText = words.slice(0, 20).join(' ') + '...';
+            para.textContent = shortText;
+            para.dataset.fullText = fullText;
+            para.dataset.shortText = shortText;
+            para.dataset.expanded = 'false';
+            
+            const btn = document.createElement('span');
+            btn.textContent = ' Read More';
+            btn.style.color = 'var(--color-primary)';
+            btn.style.cursor = 'pointer';
+            btn.style.fontWeight = '600';
+            btn.classList.add('read-more-btn');
+            
+            btn.addEventListener('click', function() {
+                if (para.dataset.expanded === 'false') {
+                    para.childNodes[0].textContent = para.dataset.fullText + ' ';
+                    btn.textContent = 'Read Less';
+                    para.dataset.expanded = 'true';
+                } else {
+                    para.childNodes[0].textContent = para.dataset.shortText + ' ';
+                    btn.textContent = 'Read More';
+                    para.dataset.expanded = 'false';
+                }
+            });
+            
+            para.appendChild(btn);
+        }
+    });
+}
 
+window.addEventListener('load', addReadMoreFunctionality);
 
-  
+const scrollBtn = document.createElement('div');
+scrollBtn.innerHTML = '↑';
+scrollBtn.classList.add('scroll');
 
-  
-  
-  
+document.body.appendChild(scrollBtn);
+
+window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 300) {
+        scrollBtn.style.display = 'flex';
+    } else {
+        scrollBtn.style.display = 'none';
+    }
+});
+
+scrollBtn.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+
+const galleryImages = [
+    "imgs/g-1.png",
+    "imgs/g-2.png",
+    "imgs/g-3.png"
+];
+
+const galleryContainer = document.getElementById("galleryContainer");
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightboxImg");
+const closeLightbox = document.getElementById("closeLightbox");
+
+function loadGallery(){
+    galleryContainer.innerHTML = "";
+    galleryImages.forEach(src => {
+        const img = document.createElement("img");
+        img.src = src;
+        img.classList.add("img-gallery");
+        img.addEventListener("click", () => openLightbox(src));
+        galleryContainer.appendChild(img);
+    });
+}
+
+function openLightbox(src){
+    lightboxImg.src = src;
+    lightbox.style.display = "flex";
+}
+
+closeLightbox.addEventListener("click", () => {
+    lightbox.style.display = "none";
+});
+
+lightbox.addEventListener("click", (e) => {
+    if(e.target === lightbox){
+        lightbox.style.display = "none";
+    }
+});
+
+loadGallery();
+
